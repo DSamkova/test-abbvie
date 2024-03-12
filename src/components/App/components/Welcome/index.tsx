@@ -34,7 +34,6 @@ function Welcome() {
                 <WelcomeImage/>
             </div>
         </div>
-
     );
 }
 

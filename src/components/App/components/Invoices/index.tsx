@@ -8,12 +8,13 @@ import {
     tableCellClasses,
     TableContainer,
     TableHead,
-    TableRow, Typography
+    TableRow,
+    Typography
 } from "@mui/material";
 import {columns, rows, StatusesColor} from "./data";
-import classes from "./Invoices.module.scss"
 import {styled} from "@mui/material/styles";
 import Paper from "../../../Paper/Paper";
+import classes from "./Invoices.module.scss";
 
 
 const InvoicesTable: React.FC = () => {
@@ -27,17 +28,14 @@ const InvoicesTable: React.FC = () => {
                 <Table sx={{minWidth: 650}} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            {columns.map(column => (
+                            {columns.map((column) => (
                                 <TableCell key={column.field}>{column.headerName}</TableCell>
                             ))}
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
-                            <TableRow
-                                key={row.id}
-                                sx={{"&:last-child td, &:last-child th": {border: 0}}}
-                            >
+                            <TableRow key={row.id} sx={{"&:last-child td, &:last-child th": {border: 0}}}>
                                 <TableCell component="th" scope="row">
                                     {row.id}
                                 </TableCell>
@@ -50,15 +48,17 @@ const InvoicesTable: React.FC = () => {
                         ))}
                     </TableBody>
                 </Table>
-                <Box p={3} textAlign={"right"}>
-                    <Typography variant="subtitle2" fontWeight={700}>View All</Typography>
+                <Box p={3} textAlign="right">
+                    <Typography variant="subtitle2" fontWeight={700}>
+                        View All
+                    </Typography>
                 </Box>
             </TableContainer>
         </Paper>
     );
-}
+};
 
-export default InvoicesTable
+export default InvoicesTable;
 
 const TableCell = styled(MuiTableCell)(({theme}) => ({
     backgroundColor: "white",
@@ -71,15 +71,16 @@ const TableCell = styled(MuiTableCell)(({theme}) => ({
         fontSize: 14,
     },
 }));
-const CustomStatus = ({color, status}: { color: string, status: string }) => {
+
+const CustomStatus = ({color, status}: { color: string; status: string }) => {
     return (
         <div className={classes.status_wrapper}>
-            <div className={classes.background} style={{backgroundColor: color, color,}}>
+            <div className={classes.background} style={{backgroundColor: color, color}}>
                 {status}
             </div>
             <div className={classes.status} style={{color}}>
                 {status}
             </div>
         </div>
-    )
-}
+    );
+};

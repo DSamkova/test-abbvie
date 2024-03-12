@@ -5,17 +5,18 @@ import Paper from "../../../Paper/Paper";
 import {Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Typography, useTheme} from "@mui/material";
 import {AreasDataPerYear, SeriesAreas} from "./data";
 
+type Year = "2019" | "2020";
 const Area: React.FC = () => {
     const theme = useTheme();
-    const [selectedYear, setSelectedYear] = useState<string>("2019");
+    const [selectedYear, setSelectedYear] = useState<Year>("2019");
 
     const series = useMemo(() => {
         return SeriesAreas.map((area, index) => ({
             ...area,
-            data: AreasDataPerYear[selectedYear]?.[area.id],
-            color: index > 0 ? theme.palette.warning.main : theme.palette.success.main
-        }))
-    }, [selectedYear, theme])
+            data: AreasDataPerYear[selectedYear]?.[area.id] || [],
+            color: index > 0 ? theme.palette.warning.main : theme.palette.success.main,
+        }));
+    }, [selectedYear, theme]);
 
     const months = [
         "January", "February", "March", "April", "May", "June",
@@ -24,7 +25,6 @@ const Area: React.FC = () => {
 
     // Generate x-axis labels for months
     const xaxisLabels = months.map((month) => month.substring(0, 3));
-
 
     const options: ApexOptions = {
         chart: {
@@ -37,7 +37,10 @@ const Area: React.FC = () => {
             },
         },
         legend: {show: true, position: "top"},
-        colors: ["red", "yellow"],
+        colors: [
+            theme.palette.primary.main,
+            theme.palette.secondary.main,
+        ],
         yaxis: {
             title: {
                 text: "",
@@ -45,31 +48,30 @@ const Area: React.FC = () => {
         },
         tooltip: {fillSeriesColor: false},
         xaxis: {
-            categories: xaxisLabels
+            categories: xaxisLabels,
         },
     };
 
-    const changeYear = (event: SelectChangeEvent) => {
-        setSelectedYear(event.target.value as string);
+    const handleYearChange = (event: SelectChangeEvent) => {
+        setSelectedYear(event.target.value as Year);
     };
 
     return (
         <>
-
             <Paper>
                 <Box display="flex" width="100%" justifyContent="space-between" mb={5}>
                     <Typography variant="h6">Area Installed</Typography>
                     <FormControl variant="standard">
-                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                        <InputLabel id="year-select-label">Year</InputLabel>
                         <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
+                            labelId="year-select-label"
+                            id="year-select"
                             value={selectedYear}
                             label="Year"
-                            onChange={changeYear}
+                            onChange={handleYearChange}
                         >
-                            <MenuItem value={"2019"}>2019</MenuItem>
-                            <MenuItem value={"2020"}>2020</MenuItem>
+                            <MenuItem key="2019" value="2019">2019</MenuItem>
+                            <MenuItem key="2020" value="2020">2020</MenuItem>
                         </Select>
                     </FormControl>
                 </Box>
@@ -79,6 +81,6 @@ const Area: React.FC = () => {
             </Paper>
         </>
     );
-}
+};
 
-export default Area
+export default Area;
