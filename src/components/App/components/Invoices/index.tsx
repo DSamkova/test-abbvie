@@ -4,17 +4,14 @@ import {
     Paper as MuiPaper,
     Table,
     TableBody,
-    TableCell as MuiTableCell,
-    tableCellClasses,
     TableContainer,
     TableHead,
     TableRow,
     Typography
 } from "@mui/material";
 import {columns, rows, StatusesColor} from "./data";
-import {styled} from "@mui/material/styles";
 import Paper from "../../../Paper/Paper";
-import classes from "./Invoices.module.scss";
+import {Background, Status, StatusWrapper, TableCell} from "./style";
 
 
 const InvoicesTable: React.FC = () => {
@@ -60,27 +57,18 @@ const InvoicesTable: React.FC = () => {
 
 export default InvoicesTable;
 
-const TableCell = styled(MuiTableCell)(({theme}) => ({
-    backgroundColor: "white",
-    borderBottom: "1px dashed rgb(241, 243, 244)",
-    padding: 16,
-    [`&.${tableCellClasses.head}`]: {
-        backgroundColor: "#F3F6F8",
-    },
-    [`&.${tableCellClasses.body}`]: {
-        fontSize: 14,
-    },
-}));
+
 
 const CustomStatus = ({color, status}: { color: string; status: string }) => {
     return (
-        <div className={classes.status_wrapper}>
-            <div className={classes.background} style={{backgroundColor: color, color}}>
+        <StatusWrapper>
+            <Background sx={{backgroundColor: color, color}}>
                 {status}
-            </div>
-            <div className={classes.status} style={{color}}>
+            </Background>
+            <Status sx={{color}}>
                 {status}
-            </div>
-        </div>
+            </Status>
+        </StatusWrapper>
     );
 };
+

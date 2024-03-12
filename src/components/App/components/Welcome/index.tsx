@@ -6,17 +6,17 @@ import {
     ButtonProps,
 } from "@mui/material";
 import {styled} from "@mui/material/styles";
-import classes from "./Welcome.module.scss";
 import {ReactComponent as WelcomeImage} from "../../../../assets/name.svg";
+import {ImgWrapper, WelcomeContainer, WelcomeWrapper} from "./style";
 
 function Welcome() {
     const user: { name: string } = {
         name: "Jaydon Frankie"
     }
     return (
-        <div className={classes.wrapper}>
-            <div className={classes.welcome_container}>
-                <Title variant="h4" className={classes.add}>
+        <WelcomeWrapper>
+            <WelcomeContainer>
+                <Title variant="h4">
                     Welcome back 👋
                 </Title>
                 <Title variant="h4" mb={2}>
@@ -29,11 +29,11 @@ function Welcome() {
                 <Button variant="contained">
                     Go Now
                 </Button>
-            </div>
-            <div className={classes.img_wrapper}>
+            </WelcomeContainer>
+            <ImgWrapper>
                 <WelcomeImage/>
-            </div>
-        </div>
+            </ImgWrapper>
+        </WelcomeWrapper>
     );
 }
 

@@ -1,11 +1,11 @@
 import React from "react";
-import classes from "./Total.module.scss";
 import {defaultData, TotalSections} from "./data";
 import {styled} from "@mui/material/styles";
 import {Typography as MuiTypography, TypographyProps} from "@mui/material";
 import EjectIcon from "@mui/icons-material/Eject";
 import {Chart} from "react-google-charts";
-import Paper from "../../../Paper/Paper";
+// import Paper from "../../../Paper/Paper";
+import {TotalInfo, TotalItem, TotalWrapper} from "./style";
 
 const options = {
     legend: {position: "none"},
@@ -22,10 +22,10 @@ const options = {
 
 const Total: React.FC = () => {
     return (
-        <div className={classes.wrapper}>
+        <TotalWrapper>
             {TotalSections?.map((item) => (
-                <Paper className={classes.total_item} key={item.id}>
-                    <div className={classes.total_info}>
+                <TotalItem key={item.id}>
+                    <TotalInfo>
                         <Typography>{item.title}</Typography>
                         <Typography mt={2} mb={1} gap={1} display="flex" alignItems="center">
                             {item.change >= 0 ? <><EjectIcon color="success"/>+</> :
@@ -33,7 +33,7 @@ const Total: React.FC = () => {
                             {item.change}%
                         </Typography>
                         <Typography variant="h3">{item.total}</Typography>
-                    </div>
+                    </TotalInfo>
                     <div>
                         <Chart
                             chartType="ColumnChart"
@@ -43,9 +43,9 @@ const Total: React.FC = () => {
                             data={defaultData}
                         />
                     </div>
-                </Paper>
+                </TotalItem>
             ))}
-        </div>
+        </TotalWrapper>
     );
 };
 
