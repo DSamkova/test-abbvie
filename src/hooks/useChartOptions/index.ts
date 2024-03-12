@@ -1,7 +1,7 @@
 import {useTheme} from "@mui/material";
 import type {ApexOptions} from "apexcharts";
 
-export function useChartOptions({labels}: Partial<ApexOptions>): ApexOptions {
+export function useChartOptions({labels, legend}: Partial<ApexOptions>): ApexOptions {
     const theme = useTheme();
 
     return {

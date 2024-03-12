@@ -3,14 +3,23 @@ import {useChartOptions} from "../../../../hooks/useChartOptions";
 import {pieData} from "./data";
 import Chart from "react-apexcharts";
 import Paper from "../../../Paper";
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 const DownLoads: React.FC = () => {
     const chartOptions = useChartOptions({labels: pieData.labels});
     return (
         <Paper sx={{flexDirection: "column", flex: 1, alignItems: "flex-start"}}>
             <Typography variant="h6" mb="40px">Current Download</Typography>
-            <Chart height={300} options={chartOptions} series={pieData.chartSeries} type="donut" width="100%"/>
+            <Box width="100%" display="flex" justifyContent="center">
+                <Chart
+                    height={400}
+                    options={chartOptions}
+                    legend={{
+                        containerClass: "my-legend-container"
+                    }}
+                    series={pieData.chartSeries}
+                    type="donut" width="100%"/>
+            </Box>
         </Paper>
     );
 }

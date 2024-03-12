@@ -12,14 +12,14 @@ const theme = createTheme(GlobalTheme)
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <div>
+            <Box px={3}>
                 <Welcome/>
                 <Total/>
-                <Box display={"flex"} >
+                <Box display={"flex"} gap={3}>
                     <DownLoads/>
                     <Area/>
                 </Box>
-            </div>
+            </Box>
         </ThemeProvider>
 
     );
