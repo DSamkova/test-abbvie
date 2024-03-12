@@ -1,7 +1,7 @@
 import {useTheme} from "@mui/material";
 import type {ApexOptions} from "apexcharts";
 
-export function useChartOptions({labels, legend}: Partial<ApexOptions>): ApexOptions {
+export function useChartOptions({labels, ...rest}: Partial<ApexOptions>): ApexOptions {
     const theme = useTheme();
 
     return {
@@ -26,5 +26,6 @@ export function useChartOptions({labels, legend}: Partial<ApexOptions>): ApexOpt
         states: {active: {filter: {type: "none"}}, hover: {filter: {type: "none"}}},
         stroke: {width: 0},
         tooltip: {fillSeriesColor: false},
+        ...rest,
     };
 }

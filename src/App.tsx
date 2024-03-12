@@ -9,6 +9,7 @@ import Area from "./components/App/components/Area";
 import InvoicesTable from "./components/App/components/Invoices";
 import {styled} from "@mui/material/styles";
 import UserList from "./components/App/components/Authors";
+import ConversionAnalytics from "./components/App/components/ConversionAnalytics";
 
 const theme = createTheme(GlobalTheme)
 
@@ -27,6 +28,7 @@ function App() {
                 </Box>
                 <Box>
                     <UserList/>
+                    <ConversionAnalytics/>
                 </Box>
             </MuiBox>
         </ThemeProvider>
