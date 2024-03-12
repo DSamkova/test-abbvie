@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+import { screen } from "@testing-library/react";
+
 jest.mock("./components/App/components/Welcome", () => () => <div data-testid="Welcome"></div>);
 jest.mock("./components/App/components/Total", () => () => <div data-testid="Total"></div>);
 jest.mock("./components/App/components/Downloads", () => () => <div data-testid="Downloads"></div>);
