@@ -56,7 +56,7 @@ const Area: React.FC = () => {
     return (
         <>
 
-            <Paper sx={{flex: 1, flexDirection: "column"}}>
+            <Paper>
                 <Box display="flex" width="100%" justifyContent="space-between" mb={5}>
                     <Typography variant="h6">Area Installed</Typography>
                     <FormControl variant="standard">

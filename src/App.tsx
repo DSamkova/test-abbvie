@@ -8,6 +8,7 @@ import DownLoads from "./components/App/components/Downloads";
 import Area from "./components/App/components/Area";
 import InvoicesTable from "./components/App/components/Invoices";
 import {styled} from "@mui/material/styles";
+import UserList from "./components/App/components/Authors";
 
 const theme = createTheme(GlobalTheme)
 
@@ -23,6 +24,9 @@ function App() {
                 </Box>
                 <Box>
                     <InvoicesTable/>
+                </Box>
+                <Box>
+                    <UserList/>
                 </Box>
             </MuiBox>
         </ThemeProvider>

@@ -8,7 +8,7 @@ import {Box, Typography} from "@mui/material";
 const DownLoads: React.FC = () => {
     const chartOptions = useChartOptions({labels: pieData.labels});
     return (
-        <Paper sx={{flexDirection: "column", flex: 1, alignItems: "flex-start"}}>
+        <Paper>
             <Typography variant="h6" mb="40px">Current Download</Typography>
             <Box width="100%" display="flex" justifyContent="center">
                 <Chart

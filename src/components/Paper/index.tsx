@@ -12,8 +12,10 @@ const Paper = styled(MuiPaper)<PaperProps & SxProps>(() => ({
     borderRadius: "16px",
     zIndex: "0",
     display: "flex",
-    alignItems: "center",
+    alignItems: "flex-start",
     padding: "24px",
+    flexDirection: "column",
+    flex: 1,
 }));
 
 export default Paper;

@@ -11,6 +11,12 @@ export const GlobalTheme = {
             fontSize: 18,
             fontWeight: 700,
         },
+        caption: {
+            lineHeight: 1.5,
+            fontSize: 12,
+            fontWeight: 400,
+            color: "rgb(99, 115, 129)",
+        }
     },
     palette: {
         primary: {

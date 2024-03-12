@@ -12,7 +12,8 @@
 
   .total_item {
     margin: 12px 0;
-    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
 
     .total_info {
       display: flex;
