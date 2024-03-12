@@ -4,9 +4,9 @@ export const GlobalTheme = {
         lineHeight: 1.57143,
         fontSize: 14,
         fontFamily: [
-            'Public Sans', // Replace this with your desired font family
-            'sans-serif',
-        ].join(','),
+            "Public Sans", // Replace this with your desired font family
+            "sans-serif",
+        ].join(","),
         h6: {
             fontSize: 18,
             fontWeight: 700,
@@ -14,19 +14,19 @@ export const GlobalTheme = {
     },
     palette: {
         primary: {
-            main: '#212B36',
+            main: "#212B36",
         },
         secondary: {
-            main: '#00B8D9',
+            main: "#00B8D9",
         },
         success: {
-            main: '#00A66E',
+            main: "#00A66E",
         },
         warning: {
-            main: '#FFAB00'
+            main: "#FFAB00"
         },
         error: {
-            main: '#FF5530',
+            main: "#FF5530",
         },
     }
 }

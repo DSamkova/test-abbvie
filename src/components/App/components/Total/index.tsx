@@ -1,24 +1,24 @@
-import React from 'react';
-import classes from './Total.module.scss';
-import {defaultData, TotalSections} from './data';
-import {styled} from '@mui/material/styles';
-import {Typography as MuiTypography, TypographyProps} from '@mui/material';
-import EjectIcon from '@mui/icons-material/Eject';
-import {Chart} from 'react-google-charts';
-import Paper from '../../../Paper';
+import React from "react";
+import classes from "./Total.module.scss";
+import {defaultData, TotalSections} from "./data";
+import {styled} from "@mui/material/styles";
+import {Typography as MuiTypography, TypographyProps} from "@mui/material";
+import EjectIcon from "@mui/icons-material/Eject";
+import {Chart} from "react-google-charts";
+import Paper from "../../../Paper";
 
 const Welcome: React.FC = () => {
     const options = {
-        legend: {position: 'none'},
-        hAxis: {textPosition: 'none'},
+        legend: {position: "none"},
+        hAxis: {textPosition: "none"},
         vAxis: {
-            textPosition: 'none',
+            textPosition: "none",
             gridlines: {
-                color: 'transparent',
+                color: "transparent",
             },
         },
-        baselineColor: 'transparent',
-        chartArea: {width: '100%', height: '100%'},
+        baselineColor: "transparent",
+        chartArea: {width: "100%", height: "100%"},
     };
     return (
         <div className={classes.wrapper}>
@@ -27,22 +27,22 @@ const Welcome: React.FC = () => {
                     <Paper className={classes.total_item} key={item.id}>
                         <div className={classes.total_info}>
                             <Typography>{item.title}</Typography>
-                            <Typography mt={2} mb={1} gap={1} display='flex' alignItems={'center'}>
+                            <Typography mt={2} mb={1} gap={1} display="flex" alignItems={"center"}>
                                 {
                                     item.change >= 0 ?
-                                        <><EjectIcon color='success'/>+</>
-                                        : <EjectIcon color='error' style={{transform: 'rotate(180deg)'}}/>
+                                        <><EjectIcon color="success"/>+</>
+                                        : <EjectIcon color="error" style={{transform: "rotate(180deg)"}}/>
                                 }
                                 {item.change}%
                             </Typography>
-                            <Typography variant='h3'>{item.total}</Typography>
+                            <Typography variant="h3">{item.total}</Typography>
                         </div>
                         <div>
                             <Chart
-                                chartType='ColumnChart'
+                                chartType="ColumnChart"
                                 options={{...options, colors: [item.color]}}
-                                width='60px'
-                                height='60px'
+                                width="60px"
+                                height="60px"
                                 data={defaultData}
                             />
                         </div>
@@ -55,9 +55,9 @@ const Welcome: React.FC = () => {
 }
 
 const Typography = styled(MuiTypography)<TypographyProps>(() => ({
-    '&.MuiTypography-h3': {
+    "&.MuiTypography-h3": {
         fontWeight: 700,
-        fontSize: '1.875rem',
+        fontSize: "1.875rem",
     },
 }));
 
