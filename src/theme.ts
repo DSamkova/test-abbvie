@@ -4,7 +4,7 @@ export const GlobalTheme = {
         lineHeight: 1.57143,
         fontSize: 14,
         fontFamily: [
-            "Public Sans", // Replace this with your desired font family
+            "Public Sans",
             "sans-serif",
         ].join(","),
         h6: {
@@ -28,5 +28,14 @@ export const GlobalTheme = {
         error: {
             main: "#FF5530",
         },
-    }
+    },
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1920,
+        },
+    },
 }
