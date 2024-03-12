@@ -13,7 +13,7 @@ import {
 import {columns, rows, StatusesColor} from "./data";
 import classes from "./Invoices.module.scss"
 import {styled} from "@mui/material/styles";
-import Paper from "../../../Paper";
+import Paper from "../../../Paper/Paper";
 
 
 const InvoicesTable: React.FC = () => {

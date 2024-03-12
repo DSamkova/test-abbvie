@@ -5,7 +5,7 @@ import {styled} from "@mui/material/styles";
 import {Typography as MuiTypography, TypographyProps} from "@mui/material";
 import EjectIcon from "@mui/icons-material/Eject";
 import {Chart} from "react-google-charts";
-import Paper from "../../../Paper";
+import Paper from "../../../Paper/Paper";
 
 const Welcome: React.FC = () => {
     const options = {

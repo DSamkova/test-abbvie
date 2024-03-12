@@ -1,6 +1,6 @@
 import React from "react";
 import {Grid, Typography, Avatar, Box} from "@mui/material";
-import Paper from "../../../Paper";
+import Paper from "../../../Paper/Paper";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import {userList} from "./data";

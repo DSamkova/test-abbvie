@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from "react";
 import Chart from "react-apexcharts";
 import {ApexOptions} from "apexcharts";
-import Paper from "../../../Paper";
+import Paper from "../../../Paper/Paper";
 import {Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Typography, useTheme} from "@mui/material";
 import {AreasDataPerYear, SeriesAreas} from "./data";
 

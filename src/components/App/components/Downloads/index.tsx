@@ -2,7 +2,7 @@ import React from "react";
 import {useChartOptions} from "../../../../hooks/useChartOptions";
 import {pieData} from "./data";
 import Chart from "react-apexcharts";
-import Paper from "../../../Paper";
+import Paper from "../../../Paper/Paper";
 import {Box, Typography} from "@mui/material";
 
 const DownLoads: React.FC = () => {

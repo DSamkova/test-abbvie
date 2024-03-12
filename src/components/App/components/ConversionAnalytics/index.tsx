@@ -5,7 +5,7 @@ import {
     Typography as MuiTypography,
     TypographyProps
 } from "@mui/material";
-import Paper from "../../../Paper";
+import Paper from "../../../Paper/Paper";
 import {defaultSections} from "./data";
 
 const ConversionAnalytics: React.FC = () => {
